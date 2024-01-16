@@ -17,6 +17,13 @@ class GraphController<N extends NodeBase, E extends EdgeBase<N>>
   TransformationController? _transformationController;
 
   var _centered = false;
+    
+  /// {@nodoc}
+  Rect? get effectiveViewport => _effectiveViewport;
+  /// {@nodoc}
+  Rect? get actualViewport => _actualViewport;
+  /// {@nodoc}
+  TransformationController? get transformationController => _transformationController;
 
   /// {@nodoc}
   Set<N> get nodes => Set.unmodifiable(_nodes);
