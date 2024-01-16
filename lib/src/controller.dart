@@ -180,7 +180,7 @@ class GraphController<N extends NodeBase, E extends EdgeBase<N>>
     required TransformationController transformationController,
   }) async {
     _lazyBuilding = lazyBuilding;
-    // transformationCtl = transformationController;
+    transformationCtl = transformationController;
     _currentAlgorithm = algorithm;
     _currentSize = size.resolve(
       nodes: _nodes,
