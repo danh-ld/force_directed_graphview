@@ -14,7 +14,7 @@ class GraphController<N extends NodeBase, E extends EdgeBase<N>>
   Rect? _actualViewport;
   GraphLayoutAlgorithm? _currentAlgorithm;
   LazyBuilding? _lazyBuilding;
-  TransformationController? _transformationController;
+  TransformationController? transformationController;
 
   var _centered = false;
     
@@ -23,7 +23,7 @@ class GraphController<N extends NodeBase, E extends EdgeBase<N>>
   /// {@nodoc}
   Rect? get actualViewport => _actualViewport;
   /// {@nodoc}
-  TransformationController? get transformationController => _transformationController;
+  // TransformationController? get transformationController => transformationController;
 
   /// {@nodoc}
   Set<N> get nodes => Set.unmodifiable(_nodes);
@@ -76,7 +76,7 @@ class GraphController<N extends NodeBase, E extends EdgeBase<N>>
 
   /// Instantly jumps to the given position on canvas
   void jumpToPosition(Offset position) {
-    final controller = _transformationController;
+    final controller = transformationController;
     final layout = _layout;
     final viewport = _actualViewport;
     if (controller == null || layout == null || viewport == null) {
@@ -126,7 +126,7 @@ class GraphController<N extends NodeBase, E extends EdgeBase<N>>
       throw ArgumentError.value(factor, 'factor', 'Factor must be > 0');
     }
 
-    final controller = _transformationController;
+    final controller = transformationController;
     final viewport = _actualViewport;
     if (controller == null || viewport == null) {
       return;
@@ -177,10 +177,10 @@ class GraphController<N extends NodeBase, E extends EdgeBase<N>>
     required GraphLayoutAlgorithm algorithm,
     required GraphCanvasSize size,
     required LazyBuilding lazyBuilding,
-    required TransformationController transformationController,
+    required TransformationController transformationControllerPr,
   }) async {
     _lazyBuilding = lazyBuilding;
-    _transformationController = transformationController;
+    transformationController = transformationControllerPr;
     _currentAlgorithm = algorithm;
     _currentSize = size.resolve(
       nodes: _nodes,
