@@ -177,10 +177,10 @@ class GraphController<N extends NodeBase, E extends EdgeBase<N>>
     required GraphLayoutAlgorithm algorithm,
     required GraphCanvasSize size,
     required LazyBuilding lazyBuilding,
-    required TransformationController transformationControllerPr,
+    required TransformationController transformationController,
   }) async {
     _lazyBuilding = lazyBuilding;
-    transformationController = transformationControllerPr;
+    this.transformationController = transformationController;
     _currentAlgorithm = algorithm;
     _currentSize = size.resolve(
       nodes: _nodes,
