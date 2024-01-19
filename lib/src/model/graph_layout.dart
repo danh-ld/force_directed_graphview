@@ -73,4 +73,5 @@ class GraphLayout {
 
   /// Checks if position for node exists in the layout
   bool hasPosition(NodeBase node) => _nodePositions.containsKey(node);
+  Map<NodeBase, Offset> get nodePositions => _nodePositions;
 }
