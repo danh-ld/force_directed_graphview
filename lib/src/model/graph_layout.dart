@@ -75,7 +75,7 @@ class GraphLayout {
   bool hasPosition(NodeBase node) => _nodePositions.containsKey(node);
   List<Offset> getNodePositions() {
     List<Offset> positionsList = [];
-    for (MapEntry<NodeBase, Offset> entry in positions.entries) {
+    for (MapEntry<NodeBase, Offset> entry in _nodePositions.entries) {
       positionsList.add(entry.value);
     }
     return positionsList;
