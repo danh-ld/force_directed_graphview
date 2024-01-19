@@ -17,8 +17,6 @@ class GraphLayoutBuilder {
   /// {@nodoc}
   final Set<NodeBase> nodes;
 
-  final Map<NodeBase, Offset> _positions;
-
   /// Returns the position of the node.
   Offset getNodePosition(NodeBase node) => _positions[node]!;
 
@@ -75,4 +73,6 @@ class GraphLayout {
 
   /// Checks if position for node exists in the layout
   bool hasPosition(NodeBase node) => _nodePositions.containsKey(node);
+
+  List<Offset> getNodePositions => _nodePositions.entries.map( (entry) => entry.value).toList();
 }
