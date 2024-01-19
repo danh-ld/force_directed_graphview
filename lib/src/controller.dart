@@ -29,7 +29,8 @@ class GraphController<N extends NodeBase, E extends EdgeBase<N>>
     
   List<Offset> getNodePositions() {
     List<Offset> positionsList = [];
-    for (MapEntry<NodeBase, Offset> entry in _layout.nodePositions.entries) {
+    if (_layout == null) return [];
+    for (MapEntry<NodeBase, Offset> entry in _layout!.nodePositions.entries) {
       positionsList.add(entry.value);
     }
     return positionsList;
