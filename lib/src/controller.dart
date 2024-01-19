@@ -25,7 +25,15 @@ class GraphController<N extends NodeBase, E extends EdgeBase<N>>
   /// {@nodoc}
   // TransformationController? get transformationController => transformationController;
     
-  List<Offset> get nodePositions => layout.getNodePositions();
+  // List<Offset> get nodePositions => layout.getNodePositions();
+    
+  List<Offset> getNodePositions() {
+    List<Offset> positionsList = [];
+    for (MapEntry<NodeBase, Offset> entry in layout.nodePositions.entries) {
+      positionsList.add(entry.value);
+    }
+    return positionsList;
+  }
 
   /// {@nodoc}
   Set<N> get nodes => Set.unmodifiable(_nodes);
