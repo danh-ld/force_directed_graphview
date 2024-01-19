@@ -25,7 +25,7 @@ class GraphController<N extends NodeBase, E extends EdgeBase<N>>
   /// {@nodoc}
   // TransformationController? get transformationController => transformationController;
     
-  List<Offset> getNodePositions => layout.getNodePositions();
+  List<Offset> get nodePositions => layout.getNodePositions();
 
   /// {@nodoc}
   Set<N> get nodes => Set.unmodifiable(_nodes);
