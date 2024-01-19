@@ -17,6 +17,8 @@ class GraphLayoutBuilder {
   /// {@nodoc}
   final Set<NodeBase> nodes;
 
+  final Map<NodeBase, Offset> _positions;
+
   /// Returns the position of the node.
   Offset getNodePosition(NodeBase node) => _positions[node]!;
 
@@ -39,8 +41,6 @@ class GraphLayoutBuilder {
   void translateNode(NodeBase node, Offset delta) {
     _positions[node] = _positions[node]! + delta;
   }
-
-  Map<NodeBase, Offset> get positions => _positions;
 
   /// Builds the [GraphLayout] instance.
   GraphLayout build() {
@@ -73,14 +73,4 @@ class GraphLayout {
 
   /// Checks if position for node exists in the layout
   bool hasPosition(NodeBase node) => _nodePositions.containsKey(node);
-  
-  // Map<NodeBase, Offset> get nodePositions => _nodePositions;
-  
-  // List<Offset> getNodePositions() {
-  //   List<Offset> positionsList = [];
-  //   for (MapEntry<NodeBase, Offset> entry in _nodePositions.entries) {
-  //     positionsList.add(entry.value);
-  //   }
-  //   return positionsList;
-  // }
 }
