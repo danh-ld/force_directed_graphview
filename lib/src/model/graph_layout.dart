@@ -73,5 +73,11 @@ class GraphLayout {
 
   /// Checks if position for node exists in the layout
   bool hasPosition(NodeBase node) => _nodePositions.containsKey(node);
-  List<Offset> getNodePositions => _nodePositions.entries.map( (entry) => entry.value).toList();
+  List<Offset> getNodePositions() {
+    List<Offset> positionsList = [];
+    for (MapEntry<NodeBase, Offset> entry in positions.entries) {
+      positionsList.add(entry.value);
+    }
+    return positionsList;
+  }
 }
