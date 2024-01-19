@@ -42,6 +42,8 @@ class GraphLayoutBuilder {
     _positions[node] = _positions[node]! + delta;
   }
 
+  Map<NodeBase, Offset> get positions => _positions;
+
   /// Builds the [GraphLayout] instance.
   GraphLayout build() {
     if (nodes.length != _positions.length) {
