@@ -22,19 +22,6 @@ class GraphController<N extends NodeBase, E extends EdgeBase<N>>
   Rect? get effectiveViewport => _effectiveViewport;
   /// {@nodoc}
   Rect? get actualViewport => _actualViewport;
-  /// {@nodoc}
-  // TransformationController? get transformationController => transformationController;
-    
-  // List<Offset> get nodePositions => layout.getNodePositions();
-    
-  List<Offset> getNodePositions() {
-    List<Offset> positionsList = [];
-    if (_layout == null) return [];
-    for (MapEntry<NodeBase, Offset> entry in _layout!.nodePositions.entries) {
-      positionsList.add(entry.value);
-    }
-    return positionsList;
-  }
 
   /// {@nodoc}
   Set<N> get nodes => Set.unmodifiable(_nodes);
