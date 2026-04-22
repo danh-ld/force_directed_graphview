@@ -14,6 +14,7 @@ class EdgesView extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = InheritedConfiguration.controllerOf(context);
     final configuration = InheritedConfiguration.configurationOf(context);
+    var edgeLabel = '';
 
     return RepaintBoundary(
       child: CustomPaint(
