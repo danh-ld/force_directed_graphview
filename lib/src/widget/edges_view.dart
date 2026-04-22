@@ -14,8 +14,9 @@ class EdgesView extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = InheritedConfiguration.controllerOf(context);
     final configuration = InheritedConfiguration.configurationOf(context);
+    String title = "Title";
 
-    return RepaintBoundary(
+    return RepaintBoundary(``
       child: CustomPaint(
         painter: _EdgesPainter(
           controller: controller,
